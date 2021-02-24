@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SecondaryActivity::class.java)
             startActivity(intent)
         }
+
+        Log.d(TAG, "onCreate() method called.")
     }
 
     override fun onStart() {
