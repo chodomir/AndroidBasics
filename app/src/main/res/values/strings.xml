@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Basics</string>
+    <string name="mainActivityString">Main Activity</string>
+    <string name="secondaryActivityString">Secondary Activity</string>
 </resources>

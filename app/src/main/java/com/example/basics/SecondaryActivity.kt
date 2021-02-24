@@ -3,23 +3,21 @@ package com.example.basics
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CancellationSignal
 import android.util.Log
 import android.widget.Button
-import java.util.function.Consumer
 
-class MainActivity : AppCompatActivity() {
+class SecondaryActivity : AppCompatActivity() {
     companion object {
-        val TAG = "MainActivity"
+        val TAG = "SecondaryActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_secondary)
 
-        val btn: Button = findViewById(R.id.btnToSecondary)
+        val btn: Button = findViewById(R.id.btnToMain)
         btn.setOnClickListener {
-            val intent = Intent(this, SecondaryActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
