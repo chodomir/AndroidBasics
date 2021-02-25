@@ -3,4 +3,5 @@
     <string name="mainActivityString">Main Activity</string>
     <string name="secondaryActivityString">Secondary Activity</string>
     <string name="tertiaryActivityString">Tertiary Activity</string>
+    <string name="quaternaryActivityString">Quaternary Activity</string>
 </resources>
