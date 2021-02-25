@@ -11,12 +11,14 @@
         android:theme="@style/Theme.Basics">
         <activity
             android:name=".QuaternaryActivity"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.example.basics.SingleInstance">
         </activity>
 
         <activity
             android:name=".TertiaryActivity"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:taskAffinity="com.example.basics.SingleTask">
         </activity>
 
         <activity
