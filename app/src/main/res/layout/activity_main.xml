@@ -26,7 +26,7 @@
         android:text="@string/secondaryActivityString"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMainMain" />
 
     <Button
         android:id="@+id/btnMainMain"
@@ -36,7 +36,7 @@
         android:text="@string/mainActivityString"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMainSecondary" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/btnMainTertiary"
@@ -46,7 +46,7 @@
         android:text="@string/tertiaryActivityString"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMainMain" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMainSecondary" />
 
     <Button
         android:id="@+id/btnMainQuaternary"
