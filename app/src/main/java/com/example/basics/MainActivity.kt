@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val btnToSecondary: Button = findViewById(R.id.btnMainSecondary)
         val btnToMain: Button = findViewById(R.id.btnMainMain)
         val btnToTertiary: Button = findViewById(R.id.btnMainTertiary)
+        val btnToQuaternary: Button = findViewById(R.id.btnMainQuaternary)
 
         // Set button click listeners
         btnToSecondary.setOnClickListener {
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         }
         btnToTertiary.setOnClickListener {
             val intent = Intent(this, TertiaryActivity::class.java)
+            startActivity(intent)
+        }
+        btnToQuaternary.setOnClickListener {
+            val intent = Intent(this, QuaternaryActivity::class.java)
             startActivity(intent)
         }
 
