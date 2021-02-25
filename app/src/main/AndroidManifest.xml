@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Basics">
         <activity
+            android:name=".TertiaryActivity"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
             android:name=".SecondaryActivity"
             android:launchMode="singleTop">
         </activity>
