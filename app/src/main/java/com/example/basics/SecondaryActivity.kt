@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 
+// Secondary Activity has launchMode="singleTop"
 class SecondaryActivity : AppCompatActivity() {
     companion object {
         val TAG = "SecondaryActivity"
@@ -15,9 +16,16 @@ class SecondaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secondary)
 
-        val btn: Button = findViewById(R.id.btnToMain)
-        btn.setOnClickListener {
+        val btnToMain: Button = findViewById(R.id.btnSecMain)
+        val btnToSecondary: Button = findViewById(R.id.btnSecSecondary)
+
+        // Set button click listeners
+        btnToMain.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        btnToSecondary.setOnClickListener {
+            val intent = Intent(this, SecondaryActivity::class.java)
             startActivity(intent)
         }
 
