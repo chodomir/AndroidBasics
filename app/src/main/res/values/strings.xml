@@ -4,4 +4,6 @@
     <string name="secondaryActivityString">Secondary Activity</string>
     <string name="tertiaryActivityString">Tertiary Activity</string>
     <string name="quaternaryActivityString">Quaternary Activity</string>
+    <string name="startActivityForResult">Start Activity For Result</string>
+    <string name="done">Done</string>
 </resources>
