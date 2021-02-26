@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import java.util.function.Consumer
 
+// MainActivity launchMode set to "standard"
 class MainActivity : AppCompatActivity() {
     companion object {
         val TAG = "MainActivity"
@@ -17,9 +18,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btn: Button = findViewById(R.id.btnToSecondary)
-        btn.setOnClickListener {
+        val btnToSecondary: Button = findViewById(R.id.btnMainSecondary)
+        val btnToMain: Button = findViewById(R.id.btnMainMain)
+        val btnToTertiary: Button = findViewById(R.id.btnMainTertiary)
+        val btnToQuaternary: Button = findViewById(R.id.btnMainQuaternary)
+
+        // Set button click listeners
+        btnToSecondary.setOnClickListener {
             val intent = Intent(this, SecondaryActivity::class.java)
+            startActivity(intent)
+        }
+        btnToMain.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        btnToTertiary.setOnClickListener {
+            val intent = Intent(this, TertiaryActivity::class.java)
+            startActivity(intent)
+        }
+        btnToQuaternary.setOnClickListener {
+            val intent = Intent(this, QuaternaryActivity::class.java)
             startActivity(intent)
         }
 

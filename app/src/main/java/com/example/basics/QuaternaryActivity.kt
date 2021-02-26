@@ -6,20 +6,20 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 
-// Secondary Activity has launchMode="singleTop"
-class SecondaryActivity : AppCompatActivity() {
+// QuaternaryActivity has launchMode set to "singleInstance"
+class QuaternaryActivity : AppCompatActivity() {
     companion object {
-        val TAG = "SecondaryActivity"
+        val TAG = "QuaternaryActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_secondary)
+        setContentView(R.layout.activity_quaternary)
 
-        val btnToMain: Button = findViewById(R.id.btnSecMain)
-        val btnToSecondary: Button = findViewById(R.id.btnSecSecondary)
-        val btnToTertiary: Button = findViewById(R.id.btnSecTertiary)
-        val btnToQuaternary: Button = findViewById(R.id.btnSecQuaternary)
+        val btnToMain: Button = findViewById(R.id.btnQuaMain)
+        val btnToSecondary: Button = findViewById(R.id.btnQuaSecondary)
+        val btnToTertiary: Button = findViewById(R.id.btnQuaTertiary)
+        val btnToQuaternary: Button = findViewById(R.id.btnQuaQuaternary)
 
         // Set button click listeners
         btnToMain.setOnClickListener {
