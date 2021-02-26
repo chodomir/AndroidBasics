@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val LAUNCH_RESULT_ACITIVITY = 0
     }
 
-    lateinit var tvActivityResult: TextView
+    private lateinit var tvActivityResult: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
