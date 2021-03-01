@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 
@@ -18,8 +19,9 @@ class TertiaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tertiary)
 
+        val bundle = bundleOf("parentActivity" to TAG)
         supportFragmentManager.commit {
-            replace<UIFragment>(R.id.fragmentContainer3)
+            replace(R.id.fragmentContainer3, UIFragment::class.java, bundle)
             setReorderingAllowed(true)
         }
 

@@ -1,15 +1,10 @@
 package com.example.basics
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CancellationSignal
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
-import androidx.fragment.app.replace
-import java.util.function.Consumer
 
 // MainActivity launchMode set to "standard"
 class MainActivity : AppCompatActivity() {
@@ -21,8 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val bundle = bundleOf("parent" to TAG)
         supportFragmentManager.commit {
-            replace<UIFragment>(R.id.fragmentContainer)
+            replace(R.id.fragmentContainer, UIFragment::class.java, bundle)
             setReorderingAllowed(true)
         }
 

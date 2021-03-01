@@ -1,12 +1,10 @@
 package com.example.basics
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
+import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 
 // Secondary Activity has launchMode="singleTop"
 class SecondaryActivity : AppCompatActivity() {
@@ -18,8 +16,9 @@ class SecondaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secondary)
 
+        val bundle = bundleOf("parentActivity" to TAG)
         supportFragmentManager.commit {
-            replace<UIFragment>(R.id.fragmentContainer2)
+            replace(R.id.fragmentContainer2, UIFragment::class.java, bundle)
             setReorderingAllowed(true)
         }
 
