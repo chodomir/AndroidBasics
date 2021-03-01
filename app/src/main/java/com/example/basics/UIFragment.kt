@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.TextView
 import kotlin.reflect.KClass
 
 class UIFragment : Fragment() {
@@ -74,6 +75,12 @@ class UIFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // get data sent from parent activity
+        val activityName = requireArguments().getString("parentActivity")
+        // set data
+        getView()?.findViewById<TextView>(R.id.tvActivity)?.text = activityName
+
         Log.d(TAG, "onViewCreated() method called.")
     }
 
