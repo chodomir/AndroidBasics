@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 
 // Secondary Activity has launchMode="singleTop"
 class SecondaryActivity : AppCompatActivity() {
@@ -16,27 +18,9 @@ class SecondaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secondary)
 
-        val btnToMain: Button = findViewById(R.id.btnSecMain)
-        val btnToSecondary: Button = findViewById(R.id.btnSecSecondary)
-        val btnToTertiary: Button = findViewById(R.id.btnSecTertiary)
-        val btnToQuaternary: Button = findViewById(R.id.btnSecQuaternary)
-
-        // Set button click listeners
-        btnToMain.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-        btnToSecondary.setOnClickListener {
-            val intent = Intent(this, SecondaryActivity::class.java)
-            startActivity(intent)
-        }
-        btnToTertiary.setOnClickListener {
-            val intent = Intent(this, TertiaryActivity::class.java)
-            startActivity(intent)
-        }
-        btnToQuaternary.setOnClickListener {
-            val intent = Intent(this, QuaternaryActivity::class.java)
-            startActivity(intent)
+        supportFragmentManager.commit {
+            replace<UIFragment>(R.id.fragmentContainer2)
+            setReorderingAllowed(true)
         }
 
         Log.d(TAG, "onCreate() method called.")
