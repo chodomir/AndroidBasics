@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 
 // QuaternaryActivity has launchMode set to "singleInstance"
 class QuaternaryActivity : AppCompatActivity() {
@@ -16,27 +18,9 @@ class QuaternaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quaternary)
 
-        val btnToMain: Button = findViewById(R.id.btnQuaMain)
-        val btnToSecondary: Button = findViewById(R.id.btnQuaSecondary)
-        val btnToTertiary: Button = findViewById(R.id.btnQuaTertiary)
-        val btnToQuaternary: Button = findViewById(R.id.btnQuaQuaternary)
-
-        // Set button click listeners
-        btnToMain.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-        btnToSecondary.setOnClickListener {
-            val intent = Intent(this, SecondaryActivity::class.java)
-            startActivity(intent)
-        }
-        btnToTertiary.setOnClickListener {
-            val intent = Intent(this, TertiaryActivity::class.java)
-            startActivity(intent)
-        }
-        btnToQuaternary.setOnClickListener {
-            val intent = Intent(this, QuaternaryActivity::class.java)
-            startActivity(intent)
+        supportFragmentManager.commit {
+            replace<UIFragment>(R.id.fragmentContainer4)
+            setReorderingAllowed(true)
         }
 
         Log.d(TAG, "onCreate() method called.")
