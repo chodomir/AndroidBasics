@@ -19,11 +19,11 @@ class TertiaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tertiary)
 
-        val bundle = bundleOf("parentActivity" to TAG)
-        supportFragmentManager.commit {
-            replace(R.id.fragmentContainer3, UIFragment::class.java, bundle)
-            setReorderingAllowed(true)
-        }
+        val bundle = bundleOf("parentActivity" to "Single Task")
+        supportFragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragmentContainer3, UIFragment::class.java, bundle)
+                .commit()
 
         Log.d(TAG, "onCreate() method called.")
     }

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.os.bundleOf
-import androidx.fragment.app.commit
 
 // MainActivity launchMode set to "standard"
 class MainActivity : AppCompatActivity() {
@@ -16,11 +15,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val bundle = bundleOf("parent" to TAG)
-        supportFragmentManager.commit {
-            replace(R.id.fragmentContainer, UIFragment::class.java, bundle)
-            setReorderingAllowed(true)
-        }
+        val bundle = bundleOf("parent" to "Standard")
+        supportFragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragmentContainer, UIFragment::class.java, bundle)
+                .commit()
 
         Log.d(TAG, "onCreate() method called.")
     }

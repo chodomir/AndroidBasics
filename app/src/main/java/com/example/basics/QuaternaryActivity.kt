@@ -19,11 +19,11 @@ class QuaternaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quaternary)
 
-        val bundle = bundleOf("parentActivity" to TAG)
-        supportFragmentManager.commit {
-            replace(R.id.fragmentContainer4, UIFragment::class.java, bundle)
-            setReorderingAllowed(true)
-        }
+        val bundle = bundleOf("parentActivity" to "Single Instance")
+        supportFragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragmentContainer4, UIFragment::class.java, bundle)
+                .commit()
 
         Log.d(TAG, "onCreate() method called.")
     }
