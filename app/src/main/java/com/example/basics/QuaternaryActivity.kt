@@ -1,13 +1,9 @@
 package com.example.basics
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import androidx.core.os.bundleOf
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 
 // QuaternaryActivity has launchMode set to "singleInstance"
 class QuaternaryActivity : AppCompatActivity() {
@@ -19,7 +15,7 @@ class QuaternaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quaternary)
 
-        val bundle = bundleOf("parentActivity" to "Single Instance")
+        val bundle = bundleOf("parent" to "Single Instance")
         supportFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.fragmentContainer4, UIFragment::class.java, bundle)

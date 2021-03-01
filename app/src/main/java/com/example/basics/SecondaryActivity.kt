@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.os.bundleOf
-import androidx.fragment.app.commit
+
 
 // Secondary Activity has launchMode="singleTop"
 class SecondaryActivity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class SecondaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secondary)
 
-        val bundle = bundleOf("parentActivity" to "Single Top")
+        val bundle = bundleOf("parent" to "Single Top")
         supportFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.fragmentContainer2, UIFragment::class.java, bundle)
