@@ -20,4 +20,6 @@
     <string name="flagNewTask">FLAG_ACTIVITY_NEW_TASK</string>
     <string name="flagClearTop">FLAG_ACTIVITY_CLEAR_TOP</string>
     <string name="flagSingleTop">FLAG_ACTIVITY_SINGLE_TOP</string>
+    <string name="example1">Example 1 - Activities, Tasks, Fragments</string>
+    <string name="example2">Example 2 - Dialogs</string>
 </resources>
