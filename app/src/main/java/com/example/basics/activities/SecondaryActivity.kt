@@ -1,9 +1,11 @@
-package com.example.basics
+package com.example.basics.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.os.bundleOf
+import com.example.basics.R
+import com.example.basics.UIFragment
 
 
 // Secondary Activity has launchMode="singleTop"

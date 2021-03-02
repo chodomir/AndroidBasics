@@ -27,7 +27,7 @@
             android:launchMode="singleTask"
             android:taskAffinity="com.example.basics.SingleTask" />
         <activity
-            android:name=".SecondaryActivity"
+            android:name=".activities.SecondaryActivity"
             android:launchMode="singleTop"
             android:taskAffinity="com.example.basics.Secondary" />
         <activity android:name=".activities.PrimaryActivity" />

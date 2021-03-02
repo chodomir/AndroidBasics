@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.basics.activities.PrimaryActivity
 import com.example.basics.activities.QuaternaryActivity
+import com.example.basics.activities.SecondaryActivity
 import kotlin.reflect.KClass
 
 class UIFragment : Fragment(R.layout.fragment_ui) {
