@@ -9,10 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import kotlin.reflect.KClass
 
 class UIFragment : Fragment(R.layout.fragment_ui) {
@@ -112,6 +109,9 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
                 tvText.visibility = View.VISIBLE
                 btnEdit.text = getString(R.string.edit)
             }
+
+            // Show toast message
+            Toast.makeText(context, "Saved!", Toast.LENGTH_LONG).show()
         }
 
 
