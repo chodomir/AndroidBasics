@@ -1,10 +1,9 @@
 package com.example.basics
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
+import androidx.core.os.bundleOf
 
 // TertiaryActivity has launchMode="singleTask"
 class TertiaryActivity : AppCompatActivity() {
@@ -16,28 +15,11 @@ class TertiaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tertiary)
 
-        val btnToMain: Button = findViewById(R.id.btnTerMain)
-        val btnToSecondary: Button = findViewById(R.id.btnTerSecondary)
-        val btnToTertiary: Button = findViewById(R.id.btnTerTertiary)
-        val btnToQuaternary: Button = findViewById(R.id.btnTerQuaternary)
-
-        // Set button click listeners
-        btnToMain.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-        btnToSecondary.setOnClickListener {
-            val intent = Intent(this, SecondaryActivity::class.java)
-            startActivity(intent)
-        }
-        btnToTertiary.setOnClickListener {
-            val intent = Intent(this, TertiaryActivity::class.java)
-            startActivity(intent)
-        }
-        btnToQuaternary.setOnClickListener {
-            val intent = Intent(this, QuaternaryActivity::class.java)
-            startActivity(intent)
-        }
+        val bundle = bundleOf("parent" to "Single Task")
+        supportFragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragmentContainer3, UIFragment::class.java, bundle)
+                .commit()
 
         Log.d(TAG, "onCreate() method called.")
     }

@@ -4,4 +4,20 @@
     <string name="secondaryActivityString">Secondary Activity</string>
     <string name="tertiaryActivityString">Tertiary Activity</string>
     <string name="quaternaryActivityString">Quaternary Activity</string>
+    <string name="startActivityForResult">Start Activity For Result</string>
+    <string name="done">Done</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- different launch mode strings-->
+    <string name="lmStandard">Standard</string>
+    <string name="lmSingleTop">Single Top</string>
+    <string name="lmSingleTask">Single Task</string>
+    <string name="lmSingleInstance">Single Instance</string>
+
+    <!-- different intent flags for task management -->
+    <string name="flagNewTask">FLAG_ACTIVITY_NEW_TASK</string>
+    <string name="flagClearTop">FLAG_ACTIVITY_CLEAR_TOP</string>
+    <string name="flagSingleTop">FLAG_ACTIVITY_SINGLE_TOP</string>
 </resources>
