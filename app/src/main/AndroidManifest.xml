@@ -21,11 +21,6 @@
             android:name=".SecondaryActivity"
             android:launchMode="singleTop" android:taskAffinity="com.example.basics.Secondary"></activity>
         <activity android:name=".PrimaryActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
