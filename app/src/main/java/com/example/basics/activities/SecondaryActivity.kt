@@ -17,11 +17,14 @@ class SecondaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secondary)
 
-        val bundle = bundleOf("parent" to "Single Top")
-        supportFragmentManager.beginTransaction()
+        // add fragment only the first time (ignore configuration changes)
+        if (savedInstanceState == null) {
+            val bundle = bundleOf("parent" to "Single Top")
+            supportFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.fragmentContainer2, UIFragment::class.java, bundle)
                 .commit()
+        }
 
         Log.d(TAG, "onCreate() method called.")
     }
