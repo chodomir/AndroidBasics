@@ -6,6 +6,9 @@
     <string name="quaternaryActivityString">Quaternary Activity</string>
     <string name="startActivityForResult">Start Activity For Result</string>
     <string name="done">Done</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 
     <!-- different launch mode strings-->
     <string name="lmStandard">Standard</string>

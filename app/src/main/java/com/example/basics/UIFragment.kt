@@ -2,6 +2,7 @@ package com.example.basics
 
 import android.content.Context
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,17 +11,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.EditText
 import android.widget.TextView
 import kotlin.reflect.KClass
 
 class UIFragment : Fragment(R.layout.fragment_ui) {
     companion object {
         val TAG = "UIFragment"
+        val IS_EDITING_KEY = "isEditing.key"
     }
 
     private lateinit var cbFlagNewTask: CheckBox
     private lateinit var cbFlagClearTop: CheckBox
     private lateinit var cbFlagSingleTop: CheckBox
+
+    private lateinit var etText: EditText
+    private lateinit var tvText: TextView
+    private var isEditing: Boolean = false
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -30,6 +37,8 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate() method called")
+
+        isEditing = savedInstanceState?.getBoolean(IS_EDITING_KEY) ?: false
     }
 
     override fun onCreateView(
@@ -46,11 +55,20 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
         val btnSingleTop: Button = view.findViewById(R.id.btnSingleTop)
         val btnSingleTask: Button = view.findViewById(R.id.btnSingleTask)
         val btnSingleInstance: Button = view.findViewById(R.id.btnSingleInstance)
+        val btnEdit: Button = view.findViewById(R.id.btnEdit)
+        val btnSave: Button = view.findViewById(R.id.btnSave)
 
         // get checkboxes
         cbFlagNewTask = view.findViewById(R.id.cbFlagNewTask)
         cbFlagClearTop = view.findViewById(R.id.cbFlagClearTop)
         cbFlagSingleTop = view.findViewById(R.id.cbFlagSingleTop)
+
+        // get editText
+        etText = view.findViewById(R.id.etText)
+        etText.visibility = View.GONE
+
+        // get textView
+        tvText = view.findViewById(R.id.tvText)
 
         // set button click listeners
         btnStandard.setOnClickListener{
@@ -69,6 +87,33 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
             val intent = createIntentForStartActivity(QuaternaryActivity::class)
             startActivity(intent)
         }
+        // button click listeners that change ui state
+        btnEdit.setOnClickListener {
+            isEditing = !isEditing
+            if (isEditing) {
+                // Editing text, display editText and remove textView
+                btnEdit.text = getString(R.string.cancel)
+                etText.setText(tvText.text)
+                etText.visibility = View.VISIBLE
+                tvText.visibility = View.INVISIBLE
+            } else {
+                // Remove editText and display textView
+                btnEdit.text = getString(R.string.edit)
+                etText.visibility = View.GONE
+                tvText.visibility = View.VISIBLE
+            }
+        }
+        btnSave.setOnClickListener {
+            tvText.text = etText.text
+
+            // if editing remove edit text
+            if (isEditing) {
+                etText.visibility = View.GONE
+                tvText.visibility = View.VISIBLE
+                btnEdit.text = getString(R.string.edit)
+            }
+        }
+
 
         return view
     }
@@ -110,6 +155,8 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.d(TAG, "onSaveInstanceState() method called")
+
+        outState.putBoolean(IS_EDITING_KEY, isEditing)
     }
 
     override fun onDestroyView() {
