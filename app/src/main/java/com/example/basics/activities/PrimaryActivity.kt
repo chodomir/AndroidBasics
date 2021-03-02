@@ -16,11 +16,14 @@ class PrimaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_primary)
 
-        val bundle = bundleOf("parent" to "Standard")
-        supportFragmentManager.beginTransaction()
+        // add fragment only the first time (ignore configuration changes)
+        if (savedInstanceState == null) {
+            val bundle = bundleOf("parent" to "Standard")
+            supportFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.fragmentContainer, UIFragment::class.java, bundle)
                 .commit()
+        }
 
         Log.d(TAG, "onCreate() method called.")
     }
