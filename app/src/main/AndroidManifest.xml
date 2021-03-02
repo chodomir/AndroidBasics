@@ -23,7 +23,7 @@
             android:launchMode="singleInstance"
             android:taskAffinity="com.example.basics.SingleInstance" />
         <activity
-            android:name=".TertiaryActivity"
+            android:name=".activities.TertiaryActivity"
             android:launchMode="singleTask"
             android:taskAffinity="com.example.basics.SingleTask" />
         <activity
