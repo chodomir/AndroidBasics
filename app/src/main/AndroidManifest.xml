@@ -19,7 +19,7 @@
         </activity>
 
         <activity
-            android:name=".QuaternaryActivity"
+            android:name=".activities.QuaternaryActivity"
             android:launchMode="singleInstance"
             android:taskAffinity="com.example.basics.SingleInstance" />
         <activity
