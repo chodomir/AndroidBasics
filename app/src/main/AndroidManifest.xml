@@ -30,7 +30,7 @@
             android:name=".SecondaryActivity"
             android:launchMode="singleTop"
             android:taskAffinity="com.example.basics.Secondary" />
-        <activity android:name=".PrimaryActivity" />
+        <activity android:name=".activities.PrimaryActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
