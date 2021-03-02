@@ -27,10 +27,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="@string/flagNewTask"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvActivity" />
+            app:layout_constraintTop_toBottomOf="@+id/btnEdit" />
 
         <CheckBox
             android:id="@+id/cbFlagClearTop"
@@ -100,26 +100,13 @@
             android:id="@+id/etText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/app_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnSingleInstance"
+            app:layout_constraintTop_toTopOf="parent"
             tools:visibility="gone" />
-
-        <TextView
-            android:id="@+id/tvText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/app_name"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnSingleInstance" />
 
         <Button
             android:id="@+id/btnEdit"
@@ -135,12 +122,12 @@
             android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="@string/save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btnEdit"
-            app:layout_constraintTop_toBottomOf="@+id/tvText" />
+            app:layout_constraintTop_toBottomOf="@+id/tvActivity" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

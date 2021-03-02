@@ -16,6 +16,7 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
     companion object {
         val TAG = "UIFragment"
         val IS_EDITING_KEY = "isEditing.key"
+        val TEXT_KEY = "text.key"
     }
 
     private lateinit var cbFlagNewTask: CheckBox
@@ -23,8 +24,10 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
     private lateinit var cbFlagSingleTop: CheckBox
 
     private lateinit var etText: EditText
-    private lateinit var tvText: TextView
+    private lateinit var tvActivity: TextView
     private var isEditing: Boolean = false
+
+    private var text: String? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -36,6 +39,7 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
         Log.d(TAG, "onCreate() method called")
 
         isEditing = savedInstanceState?.getBoolean(IS_EDITING_KEY) ?: false
+        text = savedInstanceState?.getString(TEXT_KEY)
     }
 
     override fun onCreateView(
@@ -65,7 +69,7 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
         etText.visibility = View.GONE
 
         // get textView
-        tvText = view.findViewById(R.id.tvText)
+        tvActivity = view.findViewById(R.id.tvActivity)
 
         // set button click listeners
         btnStandard.setOnClickListener{
@@ -85,28 +89,32 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
             startActivity(intent)
         }
         // button click listeners that change ui state
+        // edit
         btnEdit.setOnClickListener {
             isEditing = !isEditing
             if (isEditing) {
                 // Editing text, display editText and remove textView
                 btnEdit.text = getString(R.string.cancel)
-                etText.setText(tvText.text)
+                etText.setText(tvActivity.text)
                 etText.visibility = View.VISIBLE
-                tvText.visibility = View.INVISIBLE
+                tvActivity.visibility = View.INVISIBLE
             } else {
                 // Remove editText and display textView
                 btnEdit.text = getString(R.string.edit)
                 etText.visibility = View.GONE
-                tvText.visibility = View.VISIBLE
+                tvActivity.visibility = View.VISIBLE
             }
         }
+        // save
         btnSave.setOnClickListener {
-            tvText.text = etText.text
+            tvActivity.text = etText.text
+            // save text to local variable
+            text = tvActivity.text.toString()
 
             // if editing remove edit text
             if (isEditing) {
                 etText.visibility = View.GONE
-                tvText.visibility = View.VISIBLE
+                tvActivity.visibility = View.VISIBLE
                 btnEdit.text = getString(R.string.edit)
             }
 
@@ -121,7 +129,7 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         // get data sent from parent activity and set it to TextView
         val activityName = requireArguments().getString("parent")
-        view.findViewById<TextView>(R.id.tvActivity).text = activityName
+        tvActivity.text = text ?: activityName
 
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated() method called.")
@@ -157,6 +165,7 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
         Log.d(TAG, "onSaveInstanceState() method called")
 
         outState.putBoolean(IS_EDITING_KEY, isEditing)
+        outState.putString(TEXT_KEY, text)
     }
 
     override fun onDestroyView() {
