@@ -6,14 +6,14 @@ import android.util.Log
 import androidx.core.os.bundleOf
 
 // MainActivity launchMode set to "standard"
-class MainActivity : AppCompatActivity() {
+class PrimaryActivity : AppCompatActivity() {
     companion object {
-        val TAG = "MainActivity"
+        val TAG = "PrimaryActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_primary)
 
         val bundle = bundleOf("parent" to "Standard")
         supportFragmentManager.beginTransaction()

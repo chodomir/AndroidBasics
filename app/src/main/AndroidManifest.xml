@@ -20,7 +20,7 @@
         <activity
             android:name=".SecondaryActivity"
             android:launchMode="singleTop" android:taskAffinity="com.example.basics.Secondary"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".PrimaryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

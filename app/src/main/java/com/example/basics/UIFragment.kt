@@ -68,7 +68,7 @@ class UIFragment : Fragment(R.layout.fragment_ui) {
 
         // set button click listeners
         btnStandard.setOnClickListener{
-            val intent = createIntentForStartActivity(MainActivity::class)
+            val intent = createIntentForStartActivity(PrimaryActivity::class)
             startActivity(intent)
         }
         btnSingleTop.setOnClickListener {
