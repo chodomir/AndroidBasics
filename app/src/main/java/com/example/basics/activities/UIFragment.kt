@@ -1,4 +1,4 @@
-package com.example.basics
+package com.example.basics.activities
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.example.basics.R
 import com.example.basics.activities.PrimaryActivity
 import com.example.basics.activities.QuaternaryActivity
 import com.example.basics.activities.SecondaryActivity

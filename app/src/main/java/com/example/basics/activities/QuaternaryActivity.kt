@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.os.bundleOf
 import com.example.basics.R
-import com.example.basics.UIFragment
+import com.example.basics.activities.UIFragment
 
 // QuaternaryActivity has launchMode set to "singleInstance"
 class QuaternaryActivity : AppCompatActivity() {
