@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Basics">
-        <activity android:name=".ResultActivity"></activity>
         <activity
             android:name=".QuaternaryActivity"
             android:launchMode="singleInstance"
