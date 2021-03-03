@@ -28,4 +28,5 @@
     <string name="header_title">Header Title</string>
     <string name="header_text">Header Text</string>
     <string name="top_app_bar">Top App Bar</string>
+    <string name="hold_to_change_color">Hold to change color</string>
 </resources>

@@ -5,18 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentContainerView
 import com.example.basics.R
 import com.example.basics.activities.UIFragment
 import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
+
 
 class BasicDialogsActivity : AppCompatActivity(),
         BasicDialogFragment.BasicDialogListener {
@@ -34,41 +31,22 @@ class BasicDialogsActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_dialogs)
 
+        // Get Views
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val topAppBar = findViewById<MaterialToolbar>(R.id.topAppBar)
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
+
+        // Bind burger menu to onClick callback
         topAppBar.setNavigationOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }
-
+        // Bind nav item to onClick callback
         navigationView.setNavigationItemSelectedListener { menuItem ->
             // Handle menu item selected
             menuItem.isChecked = !menuItem.isChecked
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
-
-        val tvColoredText: TextView = findViewById(R.id.tvColoredText)
-        tvColoredText.text = "Hold to change color"
-        tvColoredText.setTextColor(Color.BLACK)
-        tvColoredText.setOnLongClickListener {
-            tvColoredText.setTextColor(Color.MAGENTA)
-
-            // snackbar time
-            Snackbar.make(
-                findViewById(R.id.clContainer),
-                R.string.done,
-                Snackbar.LENGTH_LONG
-            ).setAction(R.string.cancel, MyUndoListener(tvColoredText))
-                .show()
-
-            return@setOnLongClickListener true
-        }
-
-        // BottomSheetBehavior configuration
-        val bottomSheetBehavior = BottomSheetBehavior.from(findViewById<LinearLayout>(R.id.linearLayout))
-        bottomSheetBehavior.peekHeight = 400
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED;
     }
 
     override fun onStart() {
