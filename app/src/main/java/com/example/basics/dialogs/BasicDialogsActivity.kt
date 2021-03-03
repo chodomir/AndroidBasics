@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment
 import com.example.basics.R
 import com.google.android.material.snackbar.Snackbar
 
-class BasicDialogsExample : AppCompatActivity(),
+class BasicDialogsActivity : AppCompatActivity(),
         BasicDialogFragment.BasicDialogListener {
     companion object {
         val TAG: String = "BasicDialogsExample"
@@ -24,7 +24,7 @@ class BasicDialogsExample : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_basic_dialogs_example)
+        setContentView(R.layout.activity_basic_dialogs)
 
         val tvColoredText: TextView = findViewById(R.id.tvColoredText)
         tvColoredText.text = "Hold to change color"
