@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.basics.activities.PrimaryActivity
+import com.example.basics.dialogs.BasicSnackbar
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         // set click listeners
         btnExample1.setOnClickListener {
             val intent = Intent(this, PrimaryActivity::class.java)
+            startActivity(intent)
+        }
+        btnExample2.setOnClickListener {
+            val intent = Intent(this, BasicSnackbar::class.java)
             startActivity(intent)
         }
     }
