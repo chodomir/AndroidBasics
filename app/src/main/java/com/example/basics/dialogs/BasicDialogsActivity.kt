@@ -4,14 +4,15 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentContainerView
 import com.example.basics.R
+import com.example.basics.activities.UIFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
@@ -42,7 +43,7 @@ class BasicDialogsActivity : AppCompatActivity(),
 
         navigationView.setNavigationItemSelectedListener { menuItem ->
             // Handle menu item selected
-            menuItem.isChecked = true
+            menuItem.isChecked = !menuItem.isChecked
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
@@ -64,7 +65,7 @@ class BasicDialogsActivity : AppCompatActivity(),
             return@setOnLongClickListener true
         }
 
-        // Bottomsheet behavior configuration
+        // BottomSheetBehavior configuration
         val bottomSheetBehavior = BottomSheetBehavior.from(findViewById<LinearLayout>(R.id.linearLayout))
         bottomSheetBehavior.peekHeight = 400
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED;
