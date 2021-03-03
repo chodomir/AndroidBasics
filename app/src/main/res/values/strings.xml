@@ -22,4 +22,10 @@
     <string name="flagSingleTop">FLAG_ACTIVITY_SINGLE_TOP</string>
     <string name="example1">Example 1 - Activities, Tasks, Fragments</string>
     <string name="example2">Example 2 - Dialogs</string>
+    <string name="title_1">Title 1</string>
+    <string name="title_2">Title 2</string>
+    <string name="title_3">Title 3</string>
+    <string name="header_title">Header Title</string>
+    <string name="header_text">Header Text</string>
+    <string name="top_app_bar">Top App Bar</string>
 </resources>
