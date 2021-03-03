@@ -44,6 +44,19 @@ class BasicDialogsActivity : AppCompatActivity(),
         navigationView.setNavigationItemSelectedListener { menuItem ->
             // Handle menu item selected
             menuItem.isChecked = !menuItem.isChecked
+            // Open a new fragment
+            when (menuItem.itemId) {
+                R.id.item1 ->
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fcvContent, BottomSheetFragment::class.java, null)
+                        .commit()
+                R.id.item2 ->
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fcvContent, UIFragment::class.java, Bundle())
+                        .commit()
+                else -> Log.d(TAG, "Kliknuo si nesto")
+            }
+
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
