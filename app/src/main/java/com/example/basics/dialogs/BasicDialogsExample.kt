@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.example.basics.R
 import com.google.android.material.snackbar.Snackbar
 
-class BasicSnackbar : AppCompatActivity() {
+class BasicDialogsExample : AppCompatActivity() {
 
     class MyUndoListener(var tvText: TextView) : View.OnClickListener {
         override fun onClick(v: View?) {
@@ -19,9 +19,10 @@ class BasicSnackbar : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_basic_snackbar)
+        setContentView(R.layout.activity_basic_dialogs_example)
 
         val tvColoredText: TextView = findViewById(R.id.tvColoredText)
+        tvColoredText.text = "Hold to change color"
         tvColoredText.setTextColor(Color.BLACK)
         tvColoredText.setOnLongClickListener {
             tvColoredText.setTextColor(Color.MAGENTA)
@@ -36,5 +37,12 @@ class BasicSnackbar : AppCompatActivity() {
 
             return@setOnLongClickListener true
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val basicdf = BasicDialogFragment()
+        basicdf.show(supportFragmentManager, "BasicDialog FragmentManager")
     }
 }
