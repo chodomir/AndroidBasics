@@ -24,8 +24,10 @@
     <string name="flagSingleTop">FLAG_ACTIVITY_SINGLE_TOP</string>
 
     <!-- MainActivity examples-->
-    <string name="example1">Example 1 - Activities, Tasks, Fragments</string>
-    <string name="example2">Example 2 - Dialogs</string>
+    <string name="example1">Activities, Tasks, Fragments</string>
+    <string name="example2">Dialogs &amp; Navigation</string>
+    <string name="example3">Toolbar</string>
+
 
     <!-- Menu titles and items -->
     <string name="title_1">Title 1</string>
