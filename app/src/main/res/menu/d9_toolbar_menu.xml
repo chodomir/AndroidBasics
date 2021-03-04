@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/d9_toolbar_action_1"
+        android:title="@string/title_1"
+        android:icon="@drawable/ic_favorite_24"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/d9_toolbar_action_2"
+        android:title="@string/title_2"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/d9_toolbar_action_3"
+        android:title="@string/title_3"
+        app:showAsAction="never" />
+</menu>

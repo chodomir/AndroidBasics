@@ -2,6 +2,8 @@ package com.example.basics.d9ActionBar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import com.example.basics.R
 
 class D9ActionBarActivity : AppCompatActivity() {
@@ -14,5 +16,10 @@ class D9ActionBarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_d9_action_bar)
         // Now that default ActionBar is disabled, this is safe to call
         setSupportActionBar(findViewById(R.id.d9_toolbar))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.d9_toolbar_menu, menu)
+        return true
     }
 }
