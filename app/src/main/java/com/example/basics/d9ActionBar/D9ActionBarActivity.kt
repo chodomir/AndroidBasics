@@ -10,6 +10,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.widget.SearchView
 import com.example.basics.R
 
 class D9ActionBarActivity : AppCompatActivity() {
@@ -30,8 +31,28 @@ class D9ActionBarActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
+    private var times = 0
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.d9_toolbar_menu, menu)
+
+        val searchItem = menu?.findItem(R.id.d9_toolbar_search_action)
+        val searchView = searchItem?.actionView as SearchView
+
+        // Define the query text listener
+        val queryTextListener = object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                tvResult.text = "You searched for: $query"
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                tvResult.text = "... $newText"
+                return true
+            }
+        }
+        // Apply defined listener
+        searchView.setOnQueryTextListener(queryTextListener)
+
         return true
     }
 

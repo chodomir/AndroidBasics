@@ -11,6 +11,8 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="hold_to_change_color">Hold to change color</string>
+    <string name="search">Search</string>
+
 
     <!-- different launch mode strings-->
     <string name="lmStandard">Standard</string>
