@@ -54,6 +54,10 @@ class BasicDialogsActivity : AppCompatActivity(),
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fcvContent, UIFragment::class.java, Bundle())
                         .commit()
+                R.id.item3 ->
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fcvContent, BottomNavigationFragment::class.java, null)
+                        .commit()
                 else -> Log.d(TAG, "Kliknuo si nesto")
             }
 
