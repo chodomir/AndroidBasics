@@ -4,11 +4,13 @@
     <string name="secondaryActivityString">Secondary Activity</string>
     <string name="tertiaryActivityString">Tertiary Activity</string>
     <string name="quaternaryActivityString">Quaternary Activity</string>
-    <string name="startActivityForResult">Start Activity For Result</string>
+
+    <!-- actions -->
     <string name="done">Done</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="hold_to_change_color">Hold to change color</string>
 
     <!-- different launch mode strings-->
     <string name="lmStandard">Standard</string>
@@ -20,13 +22,17 @@
     <string name="flagNewTask">FLAG_ACTIVITY_NEW_TASK</string>
     <string name="flagClearTop">FLAG_ACTIVITY_CLEAR_TOP</string>
     <string name="flagSingleTop">FLAG_ACTIVITY_SINGLE_TOP</string>
+
+    <!-- MainActivity examples-->
     <string name="example1">Example 1 - Activities, Tasks, Fragments</string>
     <string name="example2">Example 2 - Dialogs</string>
+
+    <!-- Menu titles and items -->
     <string name="title_1">Title 1</string>
     <string name="title_2">Title 2</string>
     <string name="title_3">Title 3</string>
     <string name="header_title">Header Title</string>
     <string name="header_text">Header Text</string>
+
     <string name="top_app_bar">Top App Bar</string>
-    <string name="hold_to_change_color">Hold to change color</string>
 </resources>
