@@ -29,7 +29,7 @@
     <string name="example1">Activities, Tasks, Fragments</string>
     <string name="example2">Dialogs &amp; Navigation</string>
     <string name="example3">Toolbar</string>
-
+    <string name="example4">Custom Dialogs</string>
 
     <!-- Menu titles and items -->
     <string name="title_1">Title 1</string>
