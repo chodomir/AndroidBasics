@@ -39,6 +39,7 @@
     <string name="header_text">Header Text</string>
 
     <string name="top_app_bar">Top App Bar</string>
+    <string name="example5">Broadcasts</string>
 
     <!-- ListView items -->
     <string-array name="list_items_array">
