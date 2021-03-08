@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".d10CustomDialog.D10CustomDialogActivity">
 
+    <ListView
+        android:id="@+id/d10_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:entries="@array/list_items_array"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="125dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
