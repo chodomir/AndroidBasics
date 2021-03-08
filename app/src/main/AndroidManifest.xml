@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Basics">
-        <activity android:name=".d9ActionBar.D9ActionBarActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".d10CustomDialog.D10CustomDialogActivity"></activity>
+        <activity
+            android:name=".d9ActionBar.D9ActionBarActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".dialogs.BasicDialogsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

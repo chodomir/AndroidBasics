@@ -29,7 +29,7 @@
     <string name="example1">Activities, Tasks, Fragments</string>
     <string name="example2">Dialogs &amp; Navigation</string>
     <string name="example3">Toolbar</string>
-
+    <string name="example4">Custom Dialogs</string>
 
     <!-- Menu titles and items -->
     <string name="title_1">Title 1</string>
@@ -39,4 +39,13 @@
     <string name="header_text">Header Text</string>
 
     <string name="top_app_bar">Top App Bar</string>
+
+    <!-- ListView items -->
+    <string-array name="list_items_array">
+        <item>Lebensabschnittpartner</item>
+        <item>Unabhängigkeitserklärung</item>
+        <item>Freundschaftsbezeugung</item>
+        <item>Rechtsschutzversicherungsgesellschaften</item>
+        <item>Kaftfahrzeug-Haftpflichtversicherung</item>
+    </string-array>
 </resources>

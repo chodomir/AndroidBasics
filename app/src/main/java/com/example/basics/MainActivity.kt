@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.basics.activities.PrimaryActivity
+import com.example.basics.d10CustomDialog.D10CustomDialogActivity
 import com.example.basics.d9ActionBar.D9ActionBarActivity
 import com.example.basics.dialogs.BasicDialogsActivity
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val btnExample1: Button = findViewById(R.id.btnExample1)
         val btnExample2: Button = findViewById(R.id.btnExample2)
         val btnExample3: Button = findViewById(R.id.btnExample3)
+        val btnExample4: Button = findViewById(R.id.btnExample4)
 
         // set click listeners
         btnExample1.setOnClickListener {
@@ -29,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         }
         btnExample3.setOnClickListener {
             val intent = Intent(this, D9ActionBarActivity::class.java)
+            startActivity(intent)
+        }
+        btnExample4.setOnClickListener {
+            val intent = Intent(this, D10CustomDialogActivity::class.java)
             startActivity(intent)
         }
     }
