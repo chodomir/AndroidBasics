@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Basics">
+        <activity android:name=".d12.D12MainActivity" />
         <activity android:name=".d11.D11MainActivity" />
         <activity android:name=".d10CustomDialog.D10CustomDialogActivity" />
         <activity
