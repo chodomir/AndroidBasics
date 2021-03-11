@@ -18,7 +18,7 @@ class D12MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_d12_main)
+        setContentView(R.layout.activity_empty)
 
         when {
             ContextCompat.checkSelfPermission(
