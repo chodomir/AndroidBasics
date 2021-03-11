@@ -12,7 +12,7 @@ private val receiver = MyBroadcastReceiver()
 class D11MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_d11_main)
+        setContentView(R.layout.activity_empty)
 
         val intentFilter = IntentFilter(CUSTOM_ACTION)
         registerReceiver(receiver, intentFilter)
