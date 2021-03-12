@@ -1,14 +1,13 @@
 package com.example.basics.d15
 
+import android.os.*
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.example.basics.R
+import java.lang.ref.WeakReference
 
 class D15MainActivity : AppCompatActivity() {
     private lateinit var mHandler: Handler
@@ -29,6 +28,12 @@ class D15MainActivity : AppCompatActivity() {
         super.onStart()
 
         startProgressHandlerStyle()
+        //startProgressRunnableStyle()
+        //startProgressAsyncTaskStyle()
+    }
+
+    private fun startProgressAsyncTaskStyle() {
+        ValuesTask(WeakReference(this)).execute(1,3,5,12,4,12)
     }
 
     private fun startProgressHandlerStyle() {
@@ -41,15 +46,23 @@ class D15MainActivity : AppCompatActivity() {
                 Thread.sleep(timeout)
                 Log.d(threadTag, "Current value: $i")
                 // update the progress bar
-                mHandler.post {
+                mHandler.postDelayed ({
                     mProgressText.text = "${((i / max.toFloat()) * 100).toInt()} %"
                     if (i == max) {
                         mProgressBar.visibility = View.GONE
                         mProgressText.text = getString(R.string.done)
                     }
-                }
+                }, 600)
             }
             Log.d(threadTag, "Finished!")
+        }).start()
+    }
+
+    // we are expecting an exception to be thrown
+    private fun startProgressRunnableStyle() {
+        Thread(Runnable() {
+            Thread.sleep(1000)
+            mProgressText.text = "Hello World!"
         }).start()
     }
 }
