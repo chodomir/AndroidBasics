@@ -30,6 +30,10 @@
     <string name="example2">Dialogs &amp; Navigation</string>
     <string name="example3">Toolbar</string>
     <string name="example4">Custom Dialogs</string>
+    <string name="example5">Broadcasts</string>
+    <string name="example6">Runtime Permissions</string>
+    <string name="example7">Storage</string>
+    <string name="example8">Threads</string>
 
     <!-- Menu titles and items -->
     <string name="title_1">Title 1</string>
@@ -39,9 +43,6 @@
     <string name="header_text">Header Text</string>
 
     <string name="top_app_bar">Top App Bar</string>
-    <string name="example5">Broadcasts</string>
-    <string name="example6">Runtime Permissions</string>
-    <string name="example7">Storage</string>
 
     <!-- ListView items -->
     <string-array name="list_items_array">
