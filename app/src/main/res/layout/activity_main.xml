@@ -58,5 +58,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/example8" />
+
+        <Button
+            android:id="@+id/btnExample9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/example9" />
     </LinearLayout>
 </ScrollView>
