@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Basics">
-        <activity android:name=".d16.D16MainActivity" android:theme="@style/MyTheme" />
+        <activity android:name=".d17.D17MainActivity"></activity>
+        <activity
+            android:name=".d16.D16MainActivity"
+            android:theme="@style/MyTheme" />
         <activity android:name=".d15.D15MainActivity" />
         <activity android:name=".d13.D13MainActivity" />
         <activity android:name=".d12.D12MainActivity" />
