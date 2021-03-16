@@ -11,6 +11,7 @@ import com.example.basics.d12.D12MainActivity
 import com.example.basics.d13.D13MainActivity
 import com.example.basics.d15.D15MainActivity
 import com.example.basics.d16.D16MainActivity
+import com.example.basics.d17.D17MainActivity
 import com.example.basics.d9ActionBar.D9ActionBarActivity
 import com.example.basics.dialogs.BasicDialogsActivity
 
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val btnExample7: Button = findViewById(R.id.btnExample7)
         val btnExample8: Button = findViewById(R.id.btnExample8)
         val btnExample9: Button = findViewById(R.id.btnExample9)
+        val btnExample10: Button = findViewById(R.id.btnExample10)
 
         // set click listeners
         btnExample1.setOnClickListener {
@@ -67,6 +69,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, D16MainActivity::class.java)
             startActivity(intent)
         }
-
+        btnExample10.setOnClickListener {
+            val intent = Intent(this, D17MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
